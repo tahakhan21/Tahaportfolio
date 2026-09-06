@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taha Asghar | AI-Driven Control Tower & Operations</title>
-<meta name="description" content="Taha Asghar — AI & Control Tower Operations Professional based in Jeddah, Saudi Arabia.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23050B14'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%2300f2ff' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='6' fill='%2300f2ff'/%3E%3C/svg%3E">
+<title>Taha Asghar — Control Tower & Operations Portfolio</title>
+<meta name="description" content="Taha Asghar — Control Tower Operations, Supply Chain & AI Analytics Professional based in Jeddah, Saudi Arabia.">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
 
   :root {
-    --bg-dark: #030712;
-    --card-bg: rgba(15, 23, 42, 0.75);
-    --cyan-glow: #00f2ff;
-    --blue-glow: #3b82f6;
-    --purple-glow: #a855f7;
-    --text-main: #f1f5f9;
-    --text-muted: #94a3b8;
-    --border-glow: rgba(0, 242, 255, 0.2);
-    --border-bright: rgba(0, 242, 255, 0.6);
-    --maxw: 1050px;
+    --bg-dark: #0B0F19;
+    --card-bg: rgba(18, 24, 38, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --primary-glow: #0284C7;
+    --cyan-glow: #38BDF8;
+    --text-white: #FFFFFF;
+    --text-muted: #94A3B8;
+    --badge-bg: rgba(56, 189, 248, 0.1);
+    --badge-border: rgba(56, 189, 248, 0.25);
+    --maxw: 1040px;
   }
 
   * { box-sizing: border-box; }
@@ -28,358 +27,302 @@
   body {
     margin: 0;
     background-color: var(--bg-dark);
-    color: var(--text-main);
-    font-family: 'Rajdhani', sans-serif;
+    color: var(--text-white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
     line-height: 1.6;
-    font-size: 1.1rem;
     overflow-x: hidden;
+    background-image: 
+      radial-gradient(circle at 15% 20%, rgba(2, 132, 199, 0.18) 0%, transparent 45%),
+      radial-gradient(circle at 85% 60%, rgba(56, 189, 248, 0.12) 0%, transparent 40%);
+    background-attachment: fixed;
   }
 
-  /* Cyber Grid Background */
-  #bg-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    pointer-events: none;
-  }
-
-  h1, h2, h3 { font-family: 'Orbitron', sans-serif; margin: 0; letter-spacing: 0.05em; text-transform: uppercase; }
-  .code-font { font-family: 'Share Tech Mono', monospace; }
-
-  a { color: inherit; }
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; margin: 0; color: var(--text-white); }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
   /* Topbar */
   .topbar {
     position: sticky; top: 0; z-index: 50;
-    background: rgba(3, 7, 18, 0.85);
+    background: rgba(11, 15, 25, 0.85);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-glow);
+    border-bottom: 1px solid var(--card-border);
   }
-  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; }
-  .wordmark {
-    font-family: 'Orbitron', sans-serif; font-weight: 900; color: var(--cyan-glow);
-    font-size: 1.1rem; text-decoration: none; text-shadow: 0 0 10px rgba(0,242,255,0.5);
-  }
-  .navlinks { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; }
+  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; }
+  .logo { font-size: 1.1rem; font-weight: 800; letter-spacing: -0.02em; }
+  .logo span { color: var(--cyan-glow); }
+  .navlinks { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
   .navlinks a {
-    color: var(--text-muted); text-decoration: none; font-size: 0.95rem;
-    font-family: 'Share Tech Mono', monospace; transition: all 0.2s ease;
+    color: var(--text-muted); font-size: 0.92rem; font-weight: 500;
+    transition: color 0.2s ease;
   }
-  .navlinks a:hover { color: var(--cyan-glow); text-shadow: 0 0 8px var(--cyan-glow); }
+  .navlinks a:hover { color: var(--text-white); }
+
+  /* Glass Card Component */
+  .glass-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  .glass-card:hover {
+    border-color: rgba(56, 189, 248, 0.3);
+    box-shadow: 0 15px 35px rgba(2, 132, 199, 0.15);
+  }
 
   /* Hero Section */
-  .hero { padding: 90px 0 60px; }
+  .hero { padding: 90px 0 60px; text-align: center; }
   .status-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 14px; border-radius: 20px;
-    background: rgba(0, 242, 255, 0.05); border: 1px solid var(--border-bright);
-    color: var(--cyan-glow); font-size: 0.85rem; margin-bottom: 24px;
-    box-shadow: 0 0 15px rgba(0, 242, 255, 0.15);
+    padding: 6px 16px; border-radius: 30px;
+    background: var(--badge-bg); border: 1px solid var(--badge-border);
+    color: var(--cyan-glow); font-size: 0.88rem; font-weight: 600; margin-bottom: 24px;
   }
-  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan-glow); box-shadow: 0 0 8px var(--cyan-glow); }
+  .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan-glow); box-shadow: 0 0 10px var(--cyan-glow); }
 
   .hero h1 {
-    font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 900;
-    background: linear-gradient(135deg, #ffffff 30%, var(--cyan-glow) 100%);
+    font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 800;
+    letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 20px;
+  }
+  .hero-gradient-text {
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--cyan-glow) 100%);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    margin-bottom: 16px;
   }
-  .hero .sub-heading {
-    font-size: clamp(1.2rem, 2.5vw, 1.5rem); color: var(--text-muted);
-    font-weight: 600; max-width: 750px; margin-bottom: 32px;
+  .hero .sub-title {
+    font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--text-muted);
+    max-width: 720px; margin: 0 auto 36px; font-weight: 400;
   }
-  .hero .sub-heading strong { color: var(--cyan-glow); }
 
-  .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 50px; }
+  .btn-group { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
   .btn {
-    padding: 12px 28px; border-radius: 4px; font-weight: 700; text-decoration: none;
-    font-family: 'Share Tech Mono', monospace; transition: all 0.25s ease;
-    text-transform: uppercase; letter-spacing: 1px;
+    padding: 12px 28px; border-radius: 8px; font-weight: 700; font-size: 0.95rem;
+    transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center;
   }
-  .btn-primary {
-    background: var(--cyan-glow); color: var(--bg-dark);
-    box-shadow: 0 0 20px rgba(0,242,255,0.4); border: 1px solid var(--cyan-glow);
-  }
-  .btn-primary:hover { background: #fff; box-shadow: 0 0 30px rgba(0,242,255,0.8); }
-  .btn-ghost { border: 1px solid var(--border-glow); color: var(--text-main); background: rgba(255,255,255,0.02); }
-  .btn-ghost:hover { border-color: var(--cyan-glow); color: var(--cyan-glow); box-shadow: 0 0 15px rgba(0,242,255,0.2); }
+  .btn-primary { background: var(--cyan-glow); color: var(--bg-dark); }
+  .btn-primary:hover { background: #FFFFFF; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); }
+  .btn-secondary { background: rgba(255, 255, 255, 0.05); color: var(--text-white); border: 1px solid var(--card-border); }
+  .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--text-muted); }
 
-  /* Cyber Cards / Grid */
-  .grid-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-glow);
-    border-radius: 6px; padding: 28px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transition: all 0.3s ease;
-    position: relative; overflow: hidden;
-  }
-  .grid-card::before {
-    content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
-    background: linear-gradient(180deg, var(--cyan-glow), transparent);
-  }
-  .grid-card:hover {
-    border-color: var(--border-bright);
-    box-shadow: 0 0 25px rgba(0, 242, 255, 0.2);
-    transform: translateY(-3px);
-  }
+  /* Metrics Grid */
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .metric-card { text-align: center; padding: 24px; }
+  .metric-num { font-size: 2.5rem; font-weight: 800; color: var(--cyan-glow); }
+  .metric-label { font-size: 0.9rem; color: var(--text-muted); margin-top: 4px; font-weight: 500; }
 
-  /* Stats Grid */
-  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-bottom: 60px; }
-  .stat-card { text-align: left; }
-  .stat-card .num { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; color: var(--cyan-glow); font-weight: 700; text-shadow: 0 0 10px rgba(0,242,255,0.3); }
-  .stat-card .label { font-size: 0.95rem; color: var(--text-muted); }
-
-  /* Section Styling */
+  /* Section Titles */
   .section { padding: 60px 0; }
-  .section-title {
-    font-size: 1.8rem; color: #fff; margin-bottom: 30px;
-    display: flex; align-items: center; gap: 12px;
-  }
-  .section-title::after { content: ''; flex-grow: 1; height: 1px; background: linear-gradient(90deg, var(--border-bright), transparent); }
+  .section-header { text-align: center; margin-bottom: 48px; }
+  .section-tag { font-size: 0.85rem; font-weight: 700; color: var(--cyan-glow); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .section-title { font-size: 2rem; font-weight: 700; }
 
-  /* Timeline */
+  /* Work Experience Timeline */
   .timeline { display: flex; flex-direction: column; gap: 24px; }
-  .role-head { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 6px; }
-  .role-title { font-size: 1.3rem; color: var(--cyan-glow); font-weight: 700; }
-  .role-meta { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 12px; }
+  .role-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 6px; }
+  .role-title { font-size: 1.25rem; font-weight: 700; color: var(--text-white); }
+  .role-dates { color: var(--cyan-glow); font-weight: 600; font-size: 0.9rem; }
+  .role-company { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px; font-weight: 500; }
+  .timeline ul { margin: 0; padding-left: 20px; color: var(--text-muted); }
+  .timeline li { margin-bottom: 8px; font-size: 0.98rem; }
 
-  /* Skills & Tags */
-  .tag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
-  .tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-  .cyber-tag {
-    background: rgba(0, 242, 255, 0.05); border: 1px solid var(--border-glow);
-    padding: 6px 14px; border-radius: 3px; font-size: 0.9rem;
-    font-family: 'Share Tech Mono', monospace; color: var(--text-main);
+  /* Grid Layouts */
+  .bento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .pill-tag {
+    background: rgba(255, 255, 255, 0.05); border: 1px solid var(--card-border);
+    padding: 8px 16px; border-radius: 20px; font-size: 0.88rem; color: var(--text-white); font-weight: 500;
   }
-  .cyber-tag:hover { border-color: var(--cyan-glow); color: var(--cyan-glow); }
-
-  /* Achievements */
-  .ach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 
   /* Footer */
-  .footer { background: #02040a; border-top: 1px solid var(--border-glow); padding: 60px 0 30px; margin-top: 60px; }
-  .contact-links { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+  .footer { border-top: 1px solid var(--card-border); padding: 60px 0 40px; text-align: center; background: rgba(11, 15, 25, 0.6); }
 
   @media (max-width: 768px) {
     .navlinks { display: none; }
-    .hero h1 { font-size: 2.5rem; }
+    .hero h1 { font-size: 2.2rem; }
+    .glass-card { padding: 24px; }
   }
 </style>
 </head>
 <body>
 
-<canvas id="bg-canvas"></canvas>
-
 <header class="topbar">
   <div class="wrap">
-    <a href="#top" class="wordmark">TAHA ASGHAR // CTRL-TOWER</a>
+    <a href="#top" class="logo">TAHA <span>ASGHAR</span></a>
     <ul class="navlinks">
-      <li><a href="#about">// ABOUT</a></li>
-      <li><a href="#experience">// EXP</a></li>
-      <li><a href="#skills">// TECH_STACK</a></li>
-      <li><a href="#achievements">// METRICS</a></li>
-      <li><a href="#contact">// CONTACT</a></li>
+      <li><a href="#about">Overview</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Competencies</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </header>
 
 <div class="wrap">
+  <!-- Hero Section -->
   <section class="hero" id="top">
-    <div class="status-badge code-font">
-      <span class="status-dot"></span> SYSTEM ONLINE — AVAILABLE FOR GCC RELOCATION 🌐
+    <div class="status-badge">
+      <span class="pulse-dot"></span> Control Tower Operations & AI Analytics 🚀
     </div>
-    <h1>TAHA ASGHAR</h1>
-    <div class="sub-heading">
-      Control Tower Operations & AI Analytics Specialist 🚀. Optimizing complex supply chains, inbound/outbound logistics, and automated Reporting across FMCG & Healthcare accounts 📈.
-    </div>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="mailto:Tahaasghar21@gmail.com">Initiate Contact ✉️</a>
-      <a class="btn btn-ghost" href="https://www.linkedin.com/in/taha-asghar-9a960622a/" target="_blank" rel="noopener">LinkedIn Terminal 🔗</a>
+    <h1>Driving Operational Excellence via <span class="hero-gradient-text">Control Tower Intelligence</span></h1>
+    <div class="sub-title">
+      Managing end-to-end warehouse execution, SLA compliance, and automated Power BI reporting across FMCG, Healthcare, and SaaS accounts[cite: 1].
     </div>
 
-    <div class="stats-grid">
-      <div class="grid-card stat-card">
-        <div class="num">>99% 🎯</div>
-        <div class="label code-font">SLA & KPI Accuracy Sustained</div>
+    <div class="btn-group">
+      <a class="btn btn-primary" href="mailto:Tahaasghar21@gmail.com">Get In Touch ✉️</a>
+      <a class="btn btn-secondary" href="https://linkedin.com/in/taha-asghar" target="_blank" rel="noopener">LinkedIn Profile 🔗</a>
+    </div>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="glass-card metric-card">
+        <div class="metric-num">>99%</div>
+        <div class="metric-label">Operational KPI SLA Maintained[cite: 1]</div>
       </div>
-      <div class="grid-card stat-card">
-        <div class="num">9+ 🏢</div>
-        <div class="label code-font">Global Enterprise Accounts Managed</div>
+      <div class="glass-card metric-card">
+        <div class="metric-num">9+</div>
+        <div class="metric-label">Global Enterprise Accounts Managed[cite: 1]</div>
       </div>
-      <div class="grid-card stat-card">
-        <div class="num">BI / ETL ⚡</div>
-        <div class="label code-font">Automated Operations Reporting</div>
+      <div class="glass-card metric-card">
+        <div class="metric-num">ERP / BI</div>
+        <div class="metric-label">Oracle, SAP & Power BI Automation[cite: 1]</div>
       </div>
     </div>
   </section>
 
-  <main>
-    <section class="section" id="about">
-      <h2 class="section-title">Operations Overview 🔍</h2>
-      <div class="grid-card">
-        <p>Warehouse & Supply Chain Operations Professional with a BS in Computer Science 🎓 combining analytical automation with end-to-end warehouse execution 📦. Proven track record leading control tower systems, managing global enterprise accounts (Nestlé, Adidas, Henkel) 🌐, and executing automated data workflows using Power BI, Oracle ERP, Excel, and Google Scripting 📊.</p>
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="section-header">
+      <div class="section-tag">About Me</div>
+      <h2 class="section-title">Operations & Data Analytics Background</h2>
+    </div>
+    <div class="glass-card">
+      <p style="margin: 0; color: var(--text-muted); font-size: 1.05rem;">
+        Warehouse & Supply Chain Operations Professional with a Computer Science background[cite: 1], combining practical logistics execution with automated reporting workflows[cite: 1]. Proven track record managing global enterprise accounts (Nestlé, Adidas, Henkel)[cite: 1], enforcing QEHS safety compliance[cite: 1], and engineering automated Excel & Power BI reporting tools[cite: 1].
+      </p>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section" id="experience">
+    <div class="section-header">
+      <div class="section-tag">Career Journey</div>
+      <h2 class="section-title">Work Experience</h2>
+    </div>
+    <div class="timeline">
+      
+      <div class="glass-card">
+        <div class="role-head">
+          <span class="role-title">Control Tower Clerk — Tamer Logistics 🗼</span>
+          <span class="role-dates">Jul 2026 — Present</span>
+        </div>
+        <div class="role-company">Jeddah, Saudi Arabia[cite: 1]</div>
+        <ul>
+          <li>Monitor real-time warehouse operations via Control Tower to keep operational flow and SLA compliance on track[cite: 1].</li>
+          <li>Build and maintain interactive Power BI and Excel KPI dashboards covering inbound/outbound flow[cite: 1].</li>
+          <li>Automate daily reporting processes using Excel and Google Script to reduce manual overhead[cite: 1].</li>
+          <li>Execute Root Cause Analysis (RCA) on operational bottlenecks to minimize turnaround time (TAT) delays[cite: 1].</li>
+        </ul>
       </div>
-    </section>
 
-    <section class="section" id="experience">
-      <h2 class="section-title">Experience 💼</h2>
-      <div class="timeline">
-        <div class="grid-card">
-          <div class="role-head">
-            <span class="role-title">Control Tower Clerk — Tamer Logistics 🗼</span>
-            <span class="code-font" style="color: var(--cyan-glow);">Jul 2026 — Present</span>
-          </div>
-          <div class="role-meta code-font">Jeddah, Saudi Arabia 🇸🇦</div>
-          <ul>
-            <li>Monitor real-time warehouse flows via Control Tower to guarantee continuous operations and SLA compliance ⚙️.</li>
-            <li>Engineer interactive Power BI & Excel dashboards for operational KPI tracking across logistics streams 📊.</li>
-            <li>Automate daily reporting pipelines with Google Script and Excel formulas, significantly cutting manual data processing 🤖.</li>
-            <li>Execute Root Cause Analysis (RCA) on operational bottlenecks to minimize turnaround delays 🔎.</li>
-          </ul>
+      <div class="glass-card">
+        <div class="role-head">
+          <span class="role-title">Warehouse Operation Clerk — Tamer Logistics 🏭</span>
+          <span class="role-dates">Jan 2024 — Jun 2026</span>
         </div>
-
-        <div class="grid-card">
-          <div class="role-head">
-            <span class="role-title">Warehouse Operation Clerk — Tamer Logistics 🏭</span>
-            <span class="code-font" style="color: var(--cyan-glow);">Jan 2024 — Jun 2026</span>
-          </div>
-          <div class="role-meta code-font">Jeddah, Saudi Arabia 🇸🇦</div>
-          <ul>
-            <li>Managed daily inbound/outbound receiving, cycle counts, wall-to-wall inventory audits, and dispatch via Oracle ERP 📦.</li>
-            <li>Maintained >99% inventory accuracy through real-time transaction tracking and structured audits 🎯.</li>
-            <li><strong>Key Accounts Managed:</strong> FMCG (Nestlé, Adidas, Henkel, Dolce & Gabbana) & Healthcare (Essity) 🏷️.</li>
-          </ul>
-        </div>
-
-        <div class="grid-card">
-          <div class="role-head">
-            <span class="role-title">Research Intern (AI & Deep Learning) — The Game Company 🤖</span>
-            <span class="code-font" style="color: var(--cyan-glow);">Sep 2023 — Dec 2023</span>
-          </div>
-          <div class="role-meta code-font">Dubai, UAE (Remote) 🇦🇪</div>
-          <ul>
-            <li>Benchmarked deep learning models for real-time application performance and process automation testing 💻.</li>
-          </ul>
-        </div>
+        <div class="role-company">Jeddah, Saudi Arabia[cite: 1]</div>
+        <ul>
+          <li>Managed daily inbound/outbound logistics, cycle counts, audits, and real-time transaction tracking in Oracle ERP[cite: 1].</li>
+          <li>Maintained high inventory accuracy (>99%) through structured wall-to-wall audits and stock reconciliation[cite: 1].</li>
+          <li>Managed key accounts: FMCG (Nestlé, Adidas, MUM, Cool & Cool, Wella, Henkel, Dolce & Gabbana) & Healthcare (Essity)[cite: 1].</li>
+        </ul>
       </div>
-    </section>
 
-    <section class="section" id="skills">
-      <h2 class="section-title">Tech Stack & ERP Systems 🛠️</h2>
-      <div class="tag-grid">
-        <div class="grid-card">
-          <h3 style="font-size: 1.1rem; color: var(--cyan-glow);">Systems & Analytics 📊</h3>
-          <div class="tag-container">
-            <span class="cyber-tag">Oracle ERP 💾</span>
-            <span class="cyber-tag">SAP Fundamentals 🖥️</span>
-            <span class="cyber-tag">Power BI ETL 📈</span>
-            <span class="cyber-tag">Google Script 📜</span>
-            <span class="cyber-tag">Advanced Excel 📑</span>
-            <span class="cyber-tag">WMS Systems 📦</span>
-          </div>
+      <div class="glass-card">
+        <div class="role-head">
+          <span class="role-title">Research Intern (AI & Deep Learning) — The Game Company 🤖</span>
+          <span class="role-dates">Sep 2023 — Dec 2023</span>
         </div>
-        <div class="grid-card">
-          <h3 style="font-size: 1.1rem; color: var(--cyan-glow);">Supply Chain Ops 🚚</h3>
-          <div class="tag-container">
-            <span class="cyber-tag">Control Tower Ops 🗼</span>
-            <span class="cyber-tag">Inventory Management 🏭</span>
-            <span class="cyber-tag">Root Cause Analysis 🔎</span>
-            <span class="cyber-tag">Cross-Docking 🔄</span>
-            <span class="cyber-tag">QEHS Compliance 🛡️</span>
-          </div>
-        </div>
+        <div class="role-company">Dubai, UAE (Remote)[cite: 1]</div>
+        <ul>
+          <li>Evaluated and benchmarked AI and Deep Learning models for application performance and process automation testing[cite: 1].</li>
+        </ul>
       </div>
-    </section>
 
-    <section class="section" id="achievements">
-      <h2 class="section-title">Key Accomplishments 🏆</h2>
-      <div class="ach-grid">
-        <div class="grid-card">
-          <h3 style="color:var(--cyan-glow); font-size:1.1rem; margin-bottom:8px;">Employee of the Year 🥇</h3>
-          <p style="font-size:0.95rem; color:var(--text-muted); margin:0;">Recognized for exceptional performance and operations leadership at Tamer Logistics.</p>
-        </div>
-        <div class="grid-card">
-          <h3 style="color:var(--cyan-glow); font-size:1.1rem; margin-bottom:8px;">Automated BI Dashboards 💻</h3>
-          <p style="font-size:0.95rem; color:var(--text-muted); margin:0;">Engineered automated Power BI and Excel dashboards providing live operational visibility.</p>
+    </div>
+  </section>
+
+  <!-- Competencies Section -->
+  <section class="section" id="skills">
+    <div class="section-header">
+      <div class="section-tag">Skills & Systems</div>
+      <h2 class="section-title">Technical Competencies</h2>
+    </div>
+    <div class="bento-grid">
+      <div class="glass-card">
+        <h3 style="font-size: 1.1rem; color: var(--cyan-glow);">Systems & Analytics 📊</h3>
+        <div class="tag-container">
+          <span class="pill-tag">Oracle ERP[cite: 1]</span>
+          <span class="pill-tag">SAP Fundamentals[cite: 1]</span>
+          <span class="pill-tag">Power BI & ETL[cite: 1]</span>
+          <span class="pill-tag">Google Script[cite: 1]</span>
+          <span class="pill-tag">Advanced Excel[cite: 1]</span>
+          <span class="pill-tag">WMS Systems[cite: 1]</span>
         </div>
       </div>
-    </section>
-  </main>
+
+      <div class="glass-card">
+        <h3 style="font-size: 1.1rem; color: var(--cyan-glow);">Logistics & Execution 🚚</h3>
+        <div class="tag-container">
+          <span class="pill-tag">Control Tower Ops[cite: 1]</span>
+          <span class="pill-tag">Inbound / Outbound[cite: 1]</span>
+          <span class="pill-tag">Inventory Audits[cite: 1]</span>
+          <span class="pill-tag">Root Cause Analysis[cite: 1]</span>
+          <span class="pill-tag">QEHS Compliance[cite: 1]</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="section" id="achievements">
+    <div class="section-header">
+      <div class="section-tag">Recognition</div>
+      <h2 class="section-title">Key Accomplishments</h2>
+    </div>
+    <div class="bento-grid">
+      <div class="glass-card">
+        <h3 style="color: var(--text-white); font-size: 1.1rem; margin-bottom: 6px;">Employee of the Year 🏆</h3>
+        <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">Recognized for outstanding operational performance at Tamer Logistics[cite: 1].</p>
+      </div>
+      <div class="glass-card">
+        <h3 style="color: var(--text-white); font-size: 1.1rem; margin-bottom: 6px;">BS in Computer Science 🎓</h3>
+        <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">COMSATS University Islamabad, Pakistan[cite: 1].</p>
+      </div>
+      <div class="glass-card">
+        <h3 style="color: var(--text-white); font-size: 1.1rem; margin-bottom: 6px;">Certifications 📜</h3>
+        <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted);">Power BI ETL Data Processing, SAP Fundamentals, Logistics Excellence (Rutgers)[cite: 1].</p>
+      </div>
+    </div>
+  </section>
 </div>
 
+<!-- Footer -->
 <footer class="footer" id="contact">
   <div class="wrap">
-    <h2>Initiate Communication 💬</h2>
-    <p style="color: var(--text-muted);">Open to relocation across Saudi Arabia & GCC Countries 🇸🇦. Languages: English, Arabic, Urdu 🗣️.</p>
-    <div class="contact-links">
-      <a class="btn btn-primary" href="mailto:Tahaasghar21@gmail.com">Tahaasghar21@gmail.com ✉️</a>
-      <a class="btn btn-ghost" href="tel:+966568721572">+966 568 721 572 📞</a>
+    <h2 style="font-size: 1.8rem; margin-bottom: 12px;">Let's Connect 💬</h2>
+    <p style="color: var(--text-muted); max-width: 540px; margin: 0 auto 28px;">
+      Open to relocation across Saudi Arabia & GCC Countries[cite: 1]. Fluent in English, Arabic, and Urdu[cite: 1].
+    </p>
+    <div class="btn-group">
+      <a class="btn btn-primary" href="mailto:Tahaasghar21@gmail.com">Tahaasghar21@gmail.com[cite: 1]</a>
+      <a class="btn btn-secondary" href="tel:+966568721572">+966 568 721 572[cite: 1]</a>
     </div>
   </div>
 </footer>
-
-<!-- Background Canvas Node Script -->
-<script>
-  const canvas = document.getElementById('bg-canvas');
-  const ctx = canvas.getContext('2d');
-
-  function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-  const particles = [];
-  const particleCount = 45;
-
-  for (let i = 0; i < particleCount; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.6,
-      vy: (Math.random() - 0.5) * 0.6,
-      radius: Math.random() * 2 + 1
-    });
-  }
-
-  function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'rgba(0, 242, 255, 0.7)';
-    ctx.strokeStyle = 'rgba(0, 242, 255, 0.08)';
-
-    particles.forEach((p, index) => {
-      p.x += p.vx;
-      p.y += p.vy;
-
-      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fill();
-
-      for (let j = index + 1; j < particles.length; j++) {
-        const p2 = particles[j];
-        const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
-        if (dist < 140) {
-          ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.stroke();
-        }
-      }
-    });
-
-    requestAnimationFrame(animate);
-  }
-  animate();
-</script>
 
 </body>
 </html>
