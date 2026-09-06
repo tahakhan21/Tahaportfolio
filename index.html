@@ -6,18 +6,15 @@
 <title>Taha Asghar | Control Tower & Supply Chain Operations</title>
 <meta name="description" content="Taha Asghar — Control Tower Operations and Supply Chain Professional based in Jeddah, Saudi Arabia.">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap');
- 
+  @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+
   :root {
-    --bg-main: #FFFFFF;
-    --bg-secondary: #F8FAFC;
-    --card-bg: #FFFFFF;
-    --border-color: #E2E8F0;
-    --border-hover: #CBD5E1;
-    --text-primary: #0F172A;
-    --text-muted: #475569;
     --brand-blue: #0284C7;
     --brand-dark: #0F172A;
+    --text-main: #1E293B;
+    --text-muted: #475569;
+    --card-bg: rgba(255, 255, 255, 0.94);
+    --border-color: #E2E8F0;
     --maxw: 960px;
   }
 
@@ -26,285 +23,263 @@
 
   body {
     margin: 0;
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    color: var(--text-main);
     line-height: 1.6;
-    font-size: 1rem;
-    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.88), rgba(2, 132, 199, 0.78)), 
+                url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80') center/cover fixed no-repeat;
+    min-height: 100vh;
+    padding: 40px 20px;
   }
 
-  h1, h2, h3 { 
-    font-family: 'Space Grotesk', sans-serif; 
-    margin: 0; 
-    color: var(--text-primary);
-    letter-spacing: -0.02em;
-  }
-
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; margin: 0; color: var(--brand-dark); }
   a { color: inherit; text-decoration: none; }
-  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+  
+  .container { max-width: var(--maxw); margin: 0 auto; }
 
-  /* Topbar */
-  .topbar {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid var(--border-color);
+  /* Main Glass Panel */
+  .main-panel {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    border-radius: 20px;
+    padding: 48px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.6);
   }
-  .topbar .wrap { display: flex; align-items: center; justify-content: space-between; padding: 18px 24px; }
-  .wordmark {
-    font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--brand-dark);
-    font-size: 1.1rem; letter-spacing: -0.01em;
-  }
-  .navlinks { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
-  .navlinks a {
-    color: var(--text-muted); font-size: 0.95rem; font-weight: 500;
-    transition: color 0.15s ease;
-  }
-  .navlinks a:hover { color: var(--brand-blue); }
 
-  /* Hero Section */
-  .hero { padding: 80px 0 50px; background: var(--bg-main); }
+  /* Header & Badge */
   .status-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 6px 14px; border-radius: 20px;
-    background: #F0F9FF; border: 1px solid #BAE6FD;
-    color: #0369A1; font-size: 0.85rem; font-weight: 600; margin-bottom: 24px;
+    padding: 6px 16px; border-radius: 20px;
+    background: #E0F2FE; border: 1px solid #BAE6FD;
+    color: #0369A1; font-size: 0.85rem; font-weight: 700; margin-bottom: 24px;
   }
-  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-blue); }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--brand-blue); }
 
-  .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 700;
-    color: var(--brand-dark); line-height: 1.1; margin-bottom: 16px;
-  }
-  .hero .sub-heading {
-    font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--text-muted);
-    font-weight: 400; max-width: 720px; margin-bottom: 32px;
-  }
-  .hero .sub-heading strong { color: var(--text-primary); font-weight: 600; }
+  h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+  .subtitle { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--text-muted); font-weight: 500; margin-bottom: 32px; }
+  .subtitle strong { color: var(--brand-dark); font-weight: 700; }
 
-  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 48px; }
+  /* Actions */
+  .btn-group { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
   .btn {
-    padding: 12px 24px; border-radius: 6px; font-weight: 600; font-size: 0.95rem;
+    padding: 12px 26px; border-radius: 8px; font-weight: 700; font-size: 0.95rem;
     transition: all 0.2s ease; display: inline-flex; align-items: center; justify-content: center;
   }
-  .btn-primary {
-    background: var(--brand-dark); color: #FFFFFF;
-    border: 1px solid var(--brand-dark);
-  }
-  .btn-primary:hover { background: #1E293B; }
-  .btn-ghost { 
-    border: 1px solid var(--border-color); color: var(--text-primary); 
-    background: var(--bg-main); 
-  }
-  .btn-ghost:hover { border-color: var(--border-hover); background: var(--bg-secondary); }
+  .btn-primary { background: var(--brand-dark); color: #FFF; }
+  .btn-primary:hover { background: #1E293B; transform: translateY(-1px); }
+  .btn-secondary { background: #F1F5F9; color: var(--brand-dark); border: 1px solid var(--border-color); }
+  .btn-secondary:hover { background: #E2E8F0; }
 
-  /* Cards & Grids */
-  .card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 8px; padding: 28px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-    transition: border-color 0.2s ease;
+  /* Metrics Grid */
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 48px; }
+  .metric-card {
+    background: #F8FAFC; border: 1px solid var(--border-color);
+    padding: 24px; border-radius: 12px; text-align: center;
   }
-  .card:hover { border-color: var(--border-hover); }
-
-  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 40px; }
-  .stat-card .num { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; color: var(--brand-blue); font-weight: 700; }
-  .stat-card .label { font-size: 0.9rem; color: var(--text-muted); font-weight: 500; }
+  .metric-num { font-family: 'Space Grotesk', sans-serif; font-size: 2.2rem; font-weight: 700; color: var(--brand-blue); }
+  .metric-label { font-size: 0.88rem; color: var(--text-muted); font-weight: 600; margin-top: 4px; }
 
   /* Sections */
-  .section { padding: 48px 0; border-top: 1px solid var(--border-color); }
-  .section-title {
-    font-size: 1.5rem; color: var(--brand-dark); margin-bottom: 24px; font-weight: 700;
-  }
+  .section { padding-top: 36px; border-top: 1px solid var(--border-color); margin-top: 36px; }
+  .section-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; color: var(--brand-dark); }
 
-  /* Timeline */
+  /* Experience Cards */
   .timeline { display: flex; flex-direction: column; gap: 20px; }
-  .role-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
-  .role-title { font-size: 1.2rem; color: var(--brand-dark); font-weight: 600; }
-  .role-dates { color: var(--brand-blue); font-weight: 600; font-size: 0.9rem; }
-  .role-meta { color: var(--text-muted); font-size: 0.95rem; font-weight: 500; margin-bottom: 12px; }
-  .timeline ul { margin: 0; padding-left: 20px; color: var(--text-muted); }
-  .timeline li { margin-bottom: 6px; }
+  .exp-card {
+    background: #FFFFFF; border: 1px solid var(--border-color);
+    border-radius: 12px; padding: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  }
+  .exp-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 4px; }
+  .exp-title { font-size: 1.15rem; font-weight: 700; color: var(--brand-dark); }
+  .exp-dates { color: var(--brand-blue); font-weight: 700; font-size: 0.9rem; }
+  .exp-meta { color: var(--text-muted); font-size: 0.95rem; font-weight: 600; margin-bottom: 12px; }
+  .exp-card ul { margin: 0; padding-left: 20px; color: var(--text-muted); }
+  .exp-card li { margin-bottom: 6px; font-size: 0.98rem; }
 
   /* Tags */
   .tag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .tag-card { background: #FFFFFF; border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; }
   .tag-container { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
   .tag {
-    background: var(--bg-secondary); border: 1px solid var(--border-color);
-    padding: 6px 12px; border-radius: 4px; font-size: 0.88rem;
-    color: var(--text-primary); font-weight: 500;
+    background: #F1F5F9; border: 1px solid var(--border-color);
+    padding: 6px 12px; border-radius: 6px; font-size: 0.88rem;
+    color: var(--brand-dark); font-weight: 600;
   }
 
-  /* Achievements */
+  /* Achievements Grid */
   .ach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .ach-card { background: #FFFFFF; border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; }
 
   /* Footer */
-  .footer { background: var(--bg-secondary); border-top: 1px solid var(--border-color); padding: 50px 0; margin-top: 40px; }
-  .contact-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+  .footer { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border-color); }
 
-  @media (max-width: 768px) {
-    .navlinks { display: none; }
-    .hero h1 { font-size: 2.2rem; }
+  @media (max-width: 640px) {
+    body { padding: 16px 10px; }
+    .main-panel { padding: 24px; border-radius: 14px; }
   }
 </style>
 </head>
 <body>
 
-<header class="topbar">
-  <div class="wrap">
-    <a href="#top" class="wordmark">TAHA ASGHAR</a>
-    <ul class="navlinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Competencies</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+<div class="container">
+  <div class="main-panel">
+    
+    <!-- Hero Section -->
+    <header>
+      <div class="status-badge">
+        <span class="dot"></span> CONTROL TOWER & SUPPLY CHAIN OPERATIONS
+      </div>
+      <h1>TAHA ASGHAR</h1>
+      <div class="subtitle">
+        Specializing in <strong>end-to-end warehouse execution</strong>, automated KPI dashboards, and logistics management across FMCG, Healthcare, and SaaS accounts[cite: 1].
+      </div>
+
+      <div class="btn-group">
+        <a href="mailto:Tahaasghar21@gmail.com" class="btn btn-primary">Contact Me</a>
+        <a href="https://linkedin.com/in/taha-asghar" target="_blank" rel="noopener" class="btn btn-secondary">LinkedIn Profile</a>
+        <a href="tel:+966568721572" class="btn btn-secondary">+966 568 721 572</a>
+      </div>
+
+      <!-- Metrics -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-num">>99%</div>
+          <div class="metric-label">Operational KPI Accuracy[cite: 1]</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">Global Brands</div>
+          <div class="metric-label">Nestlé, Adidas, Henkel, D&G[cite: 1]</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-num">Systems</div>
+          <div class="metric-label">Oracle ERP, SAP & Power BI[cite: 1]</div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- About Section -->
+      <section class="section">
+        <h2 class="section-title">Professional Summary</h2>
+        <div class="exp-card">
+          <p style="margin: 0; color: var(--text-muted); font-size: 1.02rem;">
+            Warehouse & Supply Chain Operations Professional with a Computer Science background[cite: 1], combining practical logistics execution with automated data analytics[cite: 1]. Experienced in monitoring control tower operations, managing global accounts[cite: 1], enforcing SOPs and safety compliance[cite: 1], and engineering automated Excel & Power BI reporting tools[cite: 1].
+          </p>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section class="section">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline">
+          
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-title">Control Tower Clerk — Tamer Logistics</span>
+              <span class="exp-dates">Jul 2026 — Present</span>
+            </div>
+            <div class="exp-meta">Jeddah, Saudi Arabia[cite: 1]</div>
+            <ul>
+              <li>Monitor end-to-end warehouse operations via Control Tower for operational flow and SLA compliance[cite: 1].</li>
+              <li>Develop and maintain interactive Power BI and Excel KPI dashboards[cite: 1].</li>
+              <li>Automate daily reporting processes using Excel and Google Scripting[cite: 1].</li>
+              <li>Execute Root Cause Analysis (RCA) on bottlenecks to minimize turnaround time (TAT) delays[cite: 1].</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-title">Warehouse Operation Clerk — Tamer Logistics</span>
+              <span class="exp-dates">Jan 2024 — Jun 2026</span>
+            </div>
+            <div class="exp-meta">Jeddah, Saudi Arabia[cite: 1]</div>
+            <ul>
+              <li>Managed daily inbound/outbound receiving, stock reconciliation, picking, packing, and dispatch via Oracle ERP[cite: 1].</li>
+              <li>Maintained high inventory accuracy through structured cycle counts and wall-to-wall audits[cite: 1].</li>
+              <li>Managed accounts across FMCG (Nestlé, Adidas, MUM, Cool & Cool, Wella, Henkel, Dolce & Gabbana) & Healthcare (Essity)[cite: 1].</li>
+            </ul>
+          </div>
+
+          <div class="exp-card">
+            <div class="exp-head">
+              <span class="exp-title">Research Intern (AI & Deep Learning) — The Game Company</span>
+              <span class="exp-dates">Sep 2023 — Dec 2023</span>
+            </div>
+            <div class="exp-meta">Dubai, UAE (Remote)[cite: 1]</div>
+            <ul>
+              <li>Evaluated AI and Deep Learning models for application performance and process automation testing[cite: 1].</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Competencies -->
+      <section class="section">
+        <h2 class="section-title">Core Competencies & Tools</h2>
+        <div class="tag-grid">
+          
+          <div class="tag-card">
+            <h3 style="font-size: 1.05rem;">Systems & Data Analytics</h3>
+            <div class="tag-container">
+              <span class="tag">Oracle ERP[cite: 1]</span>
+              <span class="tag">SAP Fundamentals[cite: 1]</span>
+              <span class="tag">Power BI & ETL[cite: 1]</span>
+              <span class="tag">Google Script[cite: 1]</span>
+              <span class="tag">Advanced Excel[cite: 1]</span>
+              <span class="tag">WMS Systems[cite: 1]</span>
+            </div>
+          </div>
+
+          <div class="tag-card">
+            <h3 style="font-size: 1.05rem;">Logistics & Operations</h3>
+            <div class="tag-container">
+              <span class="tag">Control Tower Ops[cite: 1]</span>
+              <span class="tag">Inbound & Outbound Logistics[cite: 1]</span>
+              <span class="tag">Inventory Audits & Counts[cite: 1]</span>
+              <span class="tag">Root Cause Analysis[cite: 1]</span>
+              <span class="tag">QEHS Compliance[cite: 1]</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Achievements & Education -->
+      <section class="section">
+        <h2 class="section-title">Achievements & Education</h2>
+        <div class="ach-grid">
+          
+          <div class="ach-card">
+            <h3 style="font-size: 1rem; margin-bottom: 4px;">Employee of the Year</h3>
+            <p style="margin: 0; font-size: 0.92rem; color: var(--text-muted);">Recognized for outstanding operational performance at Tamer Logistics[cite: 1].</p>
+          </div>
+
+          <div class="ach-card">
+            <h3 style="font-size: 1rem; margin-bottom: 4px;">BS in Computer Science</h3>
+            <p style="margin: 0; font-size: 0.92rem; color: var(--text-muted);">COMSATS University Islamabad, Pakistan[cite: 1].</p>
+          </div>
+
+          <div class="ach-card">
+            <h3 style="font-size: 1rem; margin-bottom: 4px;">Certifications</h3>
+            <p style="margin: 0; font-size: 0.92rem; color: var(--text-muted);">Microsoft Power BI ETL, SAP Fundamentals, Logistics Excellence (Rutgers)[cite: 1].</p>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.9rem; color: var(--text-muted);">
+        <span>Jeddah, Saudi Arabia[cite: 1] • Open to Relocation across GCC[cite: 1]</span>
+        <span>Languages: English, Arabic, Urdu[cite: 1]</span>
+      </div>
+    </footer>
+
   </div>
-</header>
-
-<div class="wrap">
-  <section class="hero" id="top">
-    <div class="status-badge">
-      <span class="status-dot"></span> Open to Roles Across Saudi Arabia & GCC
-    </div>
-    <h1>Taha Asghar</h1>
-    <div class="sub-heading">
-      <strong>Control Tower & Supply Chain Operations Professional</strong> specializing in end-to-end warehouse execution, inventory control, and automated data analytics across FMCG, Healthcare, and SaaS accounts.
-    </div>
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="mailto:Tahaasghar21@gmail.com">Contact Me</a>
-      <a class="btn btn-ghost" href="https://linkedin.com/in/taha-asghar" target="_blank" rel="noopener">LinkedIn Profile</a>
-    </div>
-
-    <div class="stats-grid">
-      <div class="card stat-card">
-        <div class="num">>99%</div>
-        <div class="label">Operational KPI Accuracy Maintained</div>
-      </div>
-      <div class="card stat-card">
-        <div class="num">9+</div>
-        <div class="label">Global Accounts Managed (Nestlé, Adidas, Henkel)</div>
-      </div>
-      <div class="card stat-card">
-        <div class="num">Analytics</div>
-        <div class="label">Oracle ERP, SAP, Power BI & Excel Automation</div>
-      </div>
-    </div>
-  </section>
-
-  <main>
-    <section class="section" id="about">
-      <h2 class="section-title">Professional Summary</h2>
-      <div class="card">
-        <p style="margin: 0; color: var(--text-muted); font-size: 1.05rem;">
-          Warehouse & Supply Chain Operations Professional with a Computer Science background, combining practical logistics execution with automated reporting tools. Experienced in monitoring end-to-end operational flow, managing major FMCG and Healthcare accounts, enforcing safety and QEHS standards, and developing interactive Power BI and Excel KPI dashboards.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="experience">
-      <h2 class="section-title">Work Experience</h2>
-      <div class="timeline">
-        <div class="card">
-          <div class="role-head">
-            <span class="role-title">Control Tower Clerk — Tamer Logistics</span>
-            <span class="role-dates">Jul 2026 — Present</span>
-          </div>
-          <div class="role-meta">Jeddah, Saudi Arabia</div>
-          <ul>
-            <li>Monitor end-to-end warehouse operations through the Control Tower to ensure operational flow and SLA compliance.</li>
-            <li>Develop and maintain interactive Power BI and Excel dashboards for inbound/outbound flow and team productivity.</li>
-            <li>Automate daily operational reporting using Excel and Google Script to reduce manual overhead and improve precision.</li>
-            <li>Conduct Root Cause Analysis (RCA) on operational bottlenecks to drive continuous improvement initiatives.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="role-head">
-            <span class="role-title">Warehouse Operation Clerk — Tamer Logistics</span>
-            <span class="role-dates">Jan 2024 — Jun 2026</span>
-          </div>
-          <div class="role-meta">Jeddah, Saudi Arabia</div>
-          <ul>
-            <li>Managed daily inbound and outbound logistics, cycle counts, audits, and real-time transaction tracking in Oracle ERP.</li>
-            <li>Sustained high inventory accuracy through structured wall-to-wall audits and stock reconciliations.</li>
-            <li>Managed operational requirements for major FMCG accounts (Nestlé, Adidas, MUM, Cool & Cool, Wella, Henkel, Dolce & Gabbana) and Healthcare accounts (Essity, Opele).</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="role-head">
-            <span class="role-title">Research Intern (AI & Deep Learning) — The Game Company</span>
-            <span class="role-dates">Sep 2023 — Dec 2023</span>
-          </div>
-          <div class="role-meta">Dubai, UAE (Remote)</div>
-          <ul>
-            <li>Evaluated AI and Deep Learning models for real-time application performance and process automation testing.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="skills">
-      <h2 class="section-title">Core Competencies & Tools</h2>
-      <div class="tag-grid">
-        <div class="card">
-          <h3 style="font-size: 1.1rem; color: var(--brand-dark);">Systems & Data Analytics</h3>
-          <div class="tag-container">
-            <span class="tag">Oracle ERP</span>
-            <span class="tag">SAP Fundamentals</span>
-            <span class="tag">Power BI & ETL</span>
-            <span class="tag">Advanced Excel</span>
-            <span class="tag">Google Script</span>
-            <span class="tag">WMS Systems</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3 style="font-size: 1.1rem; color: var(--brand-dark);">Logistics & Execution</h3>
-          <div class="tag-container">
-            <span class="tag">Control Tower Operations</span>
-            <span class="tag">Inbound / Outbound Logistics</span>
-            <span class="tag">Inventory Audits & Counts</span>
-            <span class="tag">Root Cause Analysis (RCA)</span>
-            <span class="tag">QEHS & Safety Compliance</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="achievements">
-      <h2 class="section-title">Key Achievements & Education</h2>
-      <div class="ach-grid">
-        <div class="card">
-          <h3 style="color:var(--brand-dark); font-size:1.05rem; margin-bottom:6px;">Employee of the Year</h3>
-          <p style="font-size:0.95rem; color:var(--text-muted); margin:0;">Awarded for outstanding operational performance and leadership at Tamer Logistics.</p>
-        </div>
-        <div class="card">
-          <h3 style="color:var(--brand-dark); font-size:1.05rem; margin-bottom:6px;">BS in Computer Science</h3>
-          <p style="font-size:0.95rem; color:var(--text-muted); margin:0;">COMSATS University Islamabad, Pakistan.</p>
-        </div>
-        <div class="card">
-          <h3 style="color:var(--brand-dark); font-size:1.05rem; margin-bottom:6px;">Certifications</h3>
-          <p style="font-size:0.95rem; color:var(--text-muted); margin:0;">Microsoft Power BI ETL, SAP Fundamentals (Coursera), Logistics Excellence (Rutgers University).</p>
-        </div>
-      </div>
-    </section>
-  </main>
 </div>
-
-<footer class="footer" id="contact">
-  <div class="wrap">
-    <h2>Get in Touch</h2>
-    <p style="color: var(--text-muted); max-width: 560px;">Open to logistics and operations roles across Saudi Arabia & GCC Countries. Fluent in English, Arabic, and Urdu.</p>
-    <div class="contact-links">
-      <a class="btn btn-primary" href="mailto:Tahaasghar21@gmail.com">Tahaasghar21@gmail.com</a>
-      <a class="btn btn-ghost" href="tel:+966568721572">+966 568 721 572</a>
-    </div>
-  </div>
-</footer>
 
 </body>
 </html>
